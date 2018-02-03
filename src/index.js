@@ -1,13 +1,7 @@
 import $ from  'jquery';
-<<<<<<< HEAD
-import sensorPicker from './sensorPicker';
-import BindSensor from './sensorBind';
-import { NAMESPACE, WINDOW, } from './constants';
-=======
 import sensorPicker from './sensorPicker/sensorPicker';
 import BindSensor from './sensorBind/sensorBind';
 import { NAMESPACE, WINDOW, } from './sensorPicker/constants';
->>>>>>> 49f4d5255ec165a07b6ed563c9d2992e47da895b
 
 
 //sensorPicker入口

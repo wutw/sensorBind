@@ -3,15 +3,7 @@
  * https://github.com/wutw/sensorPicker
  *
  * Copyright (c) 2014-2018 wtw
-<<<<<<< HEAD
- * Released under the MIT license
  *
- * Date: 2018-02-02T02:22:24.794Z
-=======
- * Released under the  license
- *
- * Date: 2018-01-09T01:43:35.014Z
->>>>>>> 49f4d5255ec165a07b6ed563c9d2992e47da895b
  */
 
 'use strict';
@@ -22,24 +14,12 @@ var $ = _interopDefault(require('jquery'));
 require('jquery-validation');
 
 var DEFAULTS = {
-<<<<<<< HEAD
-
-    selectDefalut: {
-        // Defines the initial value of province.
-        manufacturer: '—— 选择厂商 ——',
-
-        // Defines the initial value of city.
-        sensor: '—— 选择传感器类型 ——',
-
-        // Defines the initial value of district.
-=======
     // Defines the initial value of select.
     selectDefalut: {
         manufacturer: '—— 选择厂商 ——',
 
         sensor: '—— 选择传感器类型 ——',
 
->>>>>>> 49f4d5255ec165a07b6ed563c9d2992e47da895b
         model: '—— 选择传感器型号 ——',
         type: '--请选择数据类型--'
     },
@@ -49,18 +29,6 @@ var DEFAULTS = {
     hasUuid: null, //新增为null，修改有uuid为true，无uuid为false
 
     uuidDIv: '.uuidItem', //uuid的div
-<<<<<<< HEAD
-    companyClass: '.companySelect',
-    rtuClass: '.RtuSelect',
-    tunnelDiv: '.tunnelInput',
-
-    lackUuidParameter: '.parameter',
-    parameterHasUuid: '.hasUuid', //有uuid的数据类型及DIV
-    parameterLackUuid: '.lackUuid'
-
-    /*rtuUrl: './rtu.json',
-    tunnelUrl: './tunnel.json'*/
-=======
     companyClass: '.companySelect', //企业 select框
     rtuClass: '.RtuSelect', //rtu select框
     tunnelDiv: '.tunnelInput', //通道输入框
@@ -72,7 +40,6 @@ var DEFAULTS = {
 
     rtuUrl: './rtu.json',
     tunnelUrl: './tunnel.json'
->>>>>>> 49f4d5255ec165a07b6ed563c9d2992e47da895b
 
 };
 
@@ -183,10 +150,9 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-<<<<<<< HEAD
+
 /*import layer from 'layui-layer';*/
-=======
->>>>>>> 49f4d5255ec165a07b6ed563c9d2992e47da895b
+
 var DEFAULT_CODE = '0000000000';
 var MANUFACTURER = 'manufacturer'; //厂商
 var SENSORTYPE = 'sensor'; //传感器类型
@@ -195,32 +161,32 @@ var DATATYPE = 'type'; //数据类型
 var DATAPARAMETER = 'parameter'; //参数
 
 var sensorPicker = function () {
-    function sensorPicker(element, options) {
-        _classCallCheck(this, sensorPicker);
+  function sensorPicker(element, options) {
+    _classCallCheck(this, sensorPicker);
 
-        this.$element = $(element);
+    this.$element = $(element);
 
-        this.options = $.extend({}, DEFAULTS, $.isPlainObject(options) && options);
-        //options多个对象合并，传入默认值参数更新，没有用定义好的
-        this.placeholders = $.extend({}, DEFAULTS.selectDefalut);
-        this.ready = false;
-        this.init();
-    }
+    this.options = $.extend({}, DEFAULTS, $.isPlainObject(options) && options);
+    //options多个对象合并，传入默认值参数更新，没有用定义好的
+    this.placeholders = $.extend({}, DEFAULTS.selectDefalut);
+    this.ready = false;
+    this.init();
+  }
 
-    _createClass(sensorPicker, [{
-        key: 'init',
-        value: function init() {
-            var _this = this;
+  _createClass(sensorPicker, [{
+    key: 'init',
+    value: function init() {
+      var _this = this;
 
-            var options = this.options;
+      var options = this.options;
 
-            this.$company = $(options.companyClass);
-            this.$rtu = $(options.rtuClass);
-            var $selects = this.$element.find('.sensorPicker');
+      this.$company = $(options.companyClass);
+      this.$rtu = $(options.rtuClass);
+      var $selects = this.$element.find('.sensorPicker');
 
-            var length = $selects.length; //select个数
+      var length = $selects.length; //select个数
 
-            var data = {};
+      var data = {};
 
             $selects.each(function (i, select) {
                 return $.extend(data, $(select).data());
@@ -229,32 +195,24 @@ var sensorPicker = function () {
             $.each([MANUFACTURER, SENSORTYPE, MODELNUMBER, DATATYPE], function (i, type) {
                 if (data[type]) {
                     //data存有manufacturer等
-<<<<<<< HEAD
-
-                    options[type] = data[type];
-
-                    _this['$' + type] = $selects.filter('[data-' + type + ']'); //html写法
-
-=======
                     options[type] = data[type];
                     _this['$' + type] = $selects.filter('[data-' + type + ']'); //html写法
->>>>>>> 49f4d5255ec165a07b6ed563c9d2992e47da895b
                     //有data-的dom选定，表示为$MANUFACTURER
                 } else {
                     _this['$' + type] = length > i ? $selects.eq(i) : null;
                 } //没写data，按顺序
             });
 
-            this.bind();
+      this.bind();
 
-            // Reset all the selects (after event binding)
-            this.reset(); //三级联动
-            this.ready = true;
-        }
-    }, {
-        key: 'bind',
-        value: function bind() {
-            var _this2 = this;
+      // Reset all the selects (after event binding)
+      this.reset(); //三级联动
+      this.ready = true;
+    }
+  }, {
+    key: 'bind',
+    value: function bind() {
+      var _this2 = this;
 
             if (this.$manufacturer) {
                 this.$manufacturer.on(EVENT_CHANGE, this.onChangeManufacturer = $.proxy(function () {
@@ -334,7 +292,7 @@ var sensorPicker = function () {
                 $(options.companyClass).children('option:first').prop('selected', 'true');
                 $(options.rtuClass).html('').append('<option value="">请选择RTU</option>');
             } else if (initUuit == false) {
-<<<<<<< HEAD
+
                 $(options.uuidDIv).addClass('none').find('input').attr('readonly', 'false').val('');
                 $(options.companyClass).attr('disabled', 'true');
                 $(options.rtuClass).attr('disabled', 'true');
@@ -346,19 +304,7 @@ var sensorPicker = function () {
                 $(options.companyClass).children('option:first').attr('selected', 'true');
                 $(options.rtuClass).html('').append('<option value="">请选择RTU</option>');
                 $(options.tunnelDiv).addClass('none').find('input').removeAttr("readonly").val('');
-=======
-                $(options.uuidDIv).addClass('none').find('input').val('');
-                $(options.companyClass).prop('disabled', 'disabled');
-                $(options.rtuClass).prop('disabled', 'disabled');
-                $(options.tunnelDiv).removeClass('none').find('input').prop('readonly', 'true');
-            } else {
-
-                $(options.uuidDIv).removeClass('none').find('input').prop('readonly', 'true');
-                $(options.companyClass).children('option:first').prop('selected', 'true');
-                $(options.rtuClass).html('').append('<option value="">请选择RTU</option>');
-                $(options.tunnelDiv).addClass('none').find('input').val('');
->>>>>>> 49f4d5255ec165a07b6ed563c9d2992e47da895b
-            }
+      }
         }
     }, {
         key: 'output',
@@ -723,14 +669,6 @@ var sensorPicker = function () {
                 $(options.companyClass).children('option:first').prop('selected', 'true');
                 return;
             }
-<<<<<<< HEAD
-
-            var orgListRequest = $.post(YHu.util.ctxPath('/rtu/queryOwnerRtuList'), sendData);
-
-            orgListRequest.done(function (jsonResult) {
-                if (jsonResult.success) {
-                    var list = jsonResult.data;
-=======
             self.ajax({
 
                 url: options.rtuUrl,
@@ -740,7 +678,6 @@ var sensorPicker = function () {
                     var resultObj = result;
 
                     var list = resultObj.list;
->>>>>>> 49f4d5255ec165a07b6ed563c9d2992e47da895b
                     var list1 = [];
                     list1[0] = '<option value=\'\'>\u8BF7\u9009\u62E9RTU</option>';
                     //  let resultObj = JSON.parse(result);
@@ -752,18 +689,12 @@ var sensorPicker = function () {
 
                     self.$rtu.html(list1.join(''));
                 } else {
-<<<<<<< HEAD
-                    layer.msg(jsonResult.message, {
-=======
                     layer.msg('请重试', {
->>>>>>> 49f4d5255ec165a07b6ed563c9d2992e47da895b
 
                         time: 2000
                     });
                 }
             });
-<<<<<<< HEAD
-=======
             /* let orgListRequest = $.post(YHu.util.ctxPath('/rtu/queryOwnerRtuList'), sendData);
               orgListRequest.done(function(jsonResult) {
                  if (jsonResult.success) {
@@ -782,7 +713,6 @@ var sensorPicker = function () {
                      })
                  }
              })*/
->>>>>>> 49f4d5255ec165a07b6ed563c9d2992e47da895b
         }
         //查询通道有无及占用情况
 
@@ -809,13 +739,6 @@ var sensorPicker = function () {
                 rtuAccessType: rtuAccessType
             };
 
-<<<<<<< HEAD
-            var orgListRequest = $.post(YHu.util.ctxPath('/rtu/queryRtuIsBindTunnelList'), sendData);
-
-            orgListRequest.done(function (jsonResult) {
-                if (jsonResult.success) {
-                    var resultObj = jsonResult;
-=======
             self.ajax({
 
                 url: options.tunnelUrl,
@@ -824,7 +747,6 @@ var sensorPicker = function () {
                 if (!!result) {
                     var resultObj = result;
 
->>>>>>> 49f4d5255ec165a07b6ed563c9d2992e47da895b
                     if (rtuAccessType == '10') {
                         //有通道
                         $('.message1').remove();
@@ -843,29 +765,6 @@ var sensorPicker = function () {
                 }
             });
 
-<<<<<<< HEAD
-            /*
-                    self.ajax({
-                         url: options.tunnelUrl,
-                        data: sendData
-                    }).then(function(result) {
-                        if (!!result) {
-                            let resultObj = result;
-                             if (rtuAccessType == '10') {
-                                //有通道
-                                 $(options.tunnelDiv).children('label:last').html(resultObj.message);
-                              } else {
-                                layer.msg(resultObj.message, {
-                                     time: 2000
-                                })
-                            }
-                         } else {
-                            layer.msg('请重新选择', {
-                                 time: 2000
-                            });
-                         }
-                    });*/
-=======
             /*  let orgListRequest = $.post(YHu.util.ctxPath('/rtu/queryRtuIsBindTunnelList'), sendData);
                orgListRequest.done(function(jsonResult) {
                   if (jsonResult.success) {
@@ -886,7 +785,6 @@ var sensorPicker = function () {
                    }
               });
             */
->>>>>>> 49f4d5255ec165a07b6ed563c9d2992e47da895b
         }
     }, {
         key: 'reset',
@@ -894,21 +792,12 @@ var sensorPicker = function () {
             var deep = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
 
             if (!deep) {
-<<<<<<< HEAD
-                //默认三级联动
-=======
->>>>>>> 49f4d5255ec165a07b6ed563c9d2992e47da895b
                 this.output(MANUFACTURER);
             } else if (this.$manufacturer) {
                 this.$manufacturer.find(':first').prop('selected', true).end().trigger(EVENT_CHANGE);
                 //默认第一项，重置初始状态
             }
-<<<<<<< HEAD
-        } //默认三级联动
-
-=======
         }
->>>>>>> 49f4d5255ec165a07b6ed563c9d2992e47da895b
     }, {
         key: 'destroy',
         value: function destroy() {
@@ -965,11 +854,10 @@ var BindSensor = function () {
             var self = this;
             var tbody = [];
             if (leftList.length == 0) {
-<<<<<<< HEAD
+
                 tbody.push('<td><td colspan=3>\u65E0\u4F20\u611F\u5668</td></tr>');
-=======
-                tbody.push('无传感器');
->>>>>>> 49f4d5255ec165a07b6ed563c9d2992e47da895b
+
+
             } else if (self.obj.hasTunnel == 'true') {
                 leftList.forEach(function (item, i) {
                     item.sensorModel = item.sensorModel || '--';
@@ -991,17 +879,16 @@ var BindSensor = function () {
         value: function renderRightTable(rightList, rightTableId) {
             var tbody = [];
             var self = this;
-<<<<<<< HEAD
+
             if (rightList.length == 0 && self.obj.hasTunnel == 'true') {
 
                 tbody.push('<td><td colspan=3>\u65E0\u4F20\u611F\u5668</td></tr>');
             } else if (rightList.length == 0 && self.obj.hasTunnel == 'false') {
                 tbody.push('<td><td colspan=2>\u65E0\u4F20\u611F\u5668</td></tr>');
-=======
+
             if (rightList.length == 0) {
                 tbody.push('无传感器');
->>>>>>> 49f4d5255ec165a07b6ed563c9d2992e47da895b
-            } else if (self.obj.hasTunnel == 'true') {
+           } else if (self.obj.hasTunnel == 'true') {
 
                 rightList.forEach(function (item, i) {
                     var td = '<tr>\n        <td><input type=\'checkbox\'  data-id= ' + i + ' />' + item.sensorName + '</td>\n        <td>' + item.tunnelNumber + '</td>\n        <td>' + item.uuid + '</td></tr>';
@@ -1098,31 +985,6 @@ var BindSensor = function () {
                 btn: ['确定', '取消'],
                 yes: function yes(index, layero) {
                     var value = $(tunnelLayerId).children('form').find('input').val();
-<<<<<<< HEAD
-                    if ($(' ' + tunnelLayerId + 'Form').valid()) {
-                        //查重
-
-                        var judge = void 0;
-                        self.rightListSub.forEach(function (element, index) {
-                            if (element.tunnelNumber == value) {
-                                judge = false;
-                            }
-                        });
-                        if (judge == false) {
-                            layer.msg('该通道号已存在，请重新填写', {
-                                icon: 2,
-                                time: 1000
-                            });
-                        } else {
-
-                            removedData.tunnelNumber = value;
-                            layer.closeAll();
-                            self.rightListSub.push(removedData);
-                            self.renderTable(self.leftListSub, self.obj.leftTableId, self.obj.rightTableId, self.rightListSub);
-                        }
-                    }
-                }
-=======
                     //   if ($(` ${tunnelLayerId}Form`).valid()) {
                     //查重
 
@@ -1146,7 +1008,6 @@ var BindSensor = function () {
                     }
                 }
                 // }
->>>>>>> 49f4d5255ec165a07b6ed563c9d2992e47da895b
             });
         }
 

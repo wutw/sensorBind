@@ -3,6 +3,8 @@
 >Two plugins based on jquery for binding sensors,  filtering sensors.
 >两个插件，一个是绑定传感器，一个是传感器类型筛选
 
+案例：< https://wutw.github.io/sensorPicker/ >
+
 ## Table of contents
 
 - [Main](#main)
@@ -94,8 +96,13 @@ $('#target').sensorPicker();
 
 ### Options
 
+<<<<<<< HEAD
 - 初始化改变默认配置项 `$().distpicker(options)`.
 - 用setDefaults方法改变默认配置项 `$.fn.distpicker.setDefaults(options)`.
+=======
+- 初始化改变默认配置项 `$().sensorpicker(options)`.
+- 用setDefaults方法改变默认配置项 `$.fn.sensorpicker.setDefaults(options)`.
+>>>>>>> e768a48fea480685d83340fbd0f446b0baf906ca
 
 - 默认配置项，
 ```js
@@ -164,22 +171,13 @@ $('#sensorPicker2').sensorPicker({
         rtuClass: '#modifyOrgRtu',
 
 
-<<<<<<< HEAD
-[⬆ back to top](#table-of-contents)
-## Echo the value
-if you want show the value by changing  the value of select ,please trigger the change event.
-```
-$("#eprovinceName").val(data.provinceName);
-$("#eprovinceName").trigger("change");
-=======
 
     });//新建实例
 $("#a").val(data).trigger("change");//回显
->>>>>>> 49f4d5255ec165a07b6ed563c9d2992e47da895b
 ```
 ## No conflict
 
-If you have to use other plugin with the same namespace, just call the `$.fn.distpicker.noConflict` method to revert to it.
+If you have to use other plugin with the same namespace, just call the `$.fn.sensorpicker.noConflict` method to revert to it.
 
 
 ```html
@@ -236,7 +234,7 @@ $.bindSensor会返回实例对象
 ```
 [⬆ back to top](#table-of-contents)
 
-<<<<<<< HEAD
+
 ## 功能
 1. 改变初始值
 2. 回显

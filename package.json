@@ -7,11 +7,8 @@
   "browser": "dist/sensorPicker.js",
   "repository": "wutw/sensorPicker",
   "homepage": "",
-<<<<<<< HEAD
-  "license": "MIT",
-=======
+
   "license": "",
->>>>>>> 49f4d5255ec165a07b6ed563c9d2992e47da895b
   "author": {
     "name": "wtw",
     "url": "https://github.com/wutw/sensorPicker"
@@ -59,23 +56,15 @@
     "rollup-plugin-commonjs": "^8.2.6",
     "rollup-plugin-node-resolve": "^3.0.0",
     "rollup-watch": "^4.3.1",
-<<<<<<< HEAD
+
     "uglify-js": "^3.2.0",
     "layui-layer": "^1.0.9"
-=======
-    "uglify-js": "^3.2.0"
 
->>>>>>> 49f4d5255ec165a07b6ed563c9d2992e47da895b
   },
 
   "peerDependencies": {
-<<<<<<< HEAD
-    "jquery": ">= 1.9.1",
-     "layui-layer": "^1.0.9"
-=======
     "jquery": ">= 1.9.1"
 
->>>>>>> 49f4d5255ec165a07b6ed563c9d2992e47da895b
 
   }
 }
